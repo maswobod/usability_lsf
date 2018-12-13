@@ -30,18 +30,18 @@ class App extends Component {
 
         let student = {
             name: "Melanie Mustermwd",
-                matrikel_number: "293209",
-                semester: 4,
-                study: "Medien Design und digitale Gestaltung",
-                spo_version: "SPO 11.22A",
-                subjects: [
+            matrikel_number: "293209",
+            semester: 4,
+            study: "Medien Design und digitale Gestaltung",
+            spo_version: "SPO 11.22A",
+            subjects: [
                 {
                     semester: 1,
                     ects: 5,
                     name: "Grundlagen Gestaltung",
                     number: 12345,
                     passed: true,
-                    grade: 1.0
+                    grade: 1.9
                 }, {
                     semester: 1,
                     ects: 5,
@@ -62,7 +62,7 @@ class App extends Component {
                     name: "Lineare Algebra",
                     number: 12345,
                     passed: true,
-                    grade: 1.0
+                    grade: 1.7
                 }, {
                     semester: 1,
                     ects: 10,
@@ -90,7 +90,7 @@ class App extends Component {
                     name: "Programmieren 2",
                     number: 12345,
                     passed: true,
-                    grade: 1.0
+                    grade: 1.5
                 }, {
                     semester: 2,
                     ects: 5,
@@ -111,7 +111,7 @@ class App extends Component {
                     name: "Film",
                     number: 12345,
                     passed: true,
-                    grade: 1.0
+                    grade: 2.0
                 }, {
                     semester: 3,
                     ects: 5,
@@ -125,14 +125,14 @@ class App extends Component {
                     name: "Webentwicklung 1",
                     number: 12345,
                     passed: true,
-                    grade: 1.0
+                    grade: 2.0
                 }, {
                     semester: 3,
                     ects: 5,
                     name: "Software Engineering",
                     number: 12345,
                     passed: true,
-                    grade: 1.0
+                    grade: 1.5
                 }
             ]
         };
@@ -276,14 +276,14 @@ class App extends Component {
         let data = [];
 
         for (let i = 1; i < student.semester; i++) {
-            data.push({semester:  i, ects: 0, target: 30});
+            data.push({semester: i, ects: 0, target: 30});
         }
         console.log(data);
         for (let i = 0; i < student.subjects.length; i++) {
             let subject = student.subjects[i];
 
             if (subject.passed)
-                data[subject.semester-1].ects += subject.ects;
+                data[subject.semester - 1].ects += subject.ects;
         }
 
         return data;
@@ -307,10 +307,28 @@ class App extends Component {
             }
         }
 
-
         return tablerows;
     }
 
+    calculateMeanGrade(subjects) {
+        let meanGrade = 0;
+        for (let i = 0; i < subjects.length; i++) {
+            meanGrade += subjects[i].grade;
+        }
+
+        //Round 2 decimals
+        return Math.round(meanGrade / subjects.length * 100) / 100;
+    }
+
+    getArrow(mean) {
+        if (mean <= 2) {
+            return <div className="grade-mean-good"><Icon name="arrow up"/></div>;
+        }
+        if (mean >= 3) {
+            return <div className="grade-mean-bad"><Icon name="arrow down"/></div>;
+        }
+        return <div className="grade-mean-middle"><Icon name="arrow right"/></div>;
+    }
 
     handleOpen() {
         this.setState({
@@ -527,13 +545,11 @@ class App extends Component {
                         <div className="Card">
                             <div className="Card-header">
                                 Notendurchschnitt
-                                <div className="grade-mean">
-                                    <Icon name="arrow up"/>
-                                </div>
+                                {this.getArrow(this.calculateMeanGrade(student.subjects))}
                             </div>
                             <div className="Card-content">
                                 <h3>
-                                    1.75
+                                    {this.calculateMeanGrade(student.subjects)}
                                     <Icon name="info circle" onClick={this.handleOpen.bind(this)}/>
                                 </h3>
                                 <Modal basic size='small'

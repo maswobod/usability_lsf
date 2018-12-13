@@ -64,8 +64,19 @@
     width: 100% !important;
 }
 
-.grade-mean {
+.grade-mean-good {
     background: green;
+}
+
+.grade-mean-bad {
+    background: red;
+}
+
+.grade-mean-middle {
+    background: #fbbd08;
+}
+
+.grade-mean-bad, .grade-mean-good, .grade-mean-middle {
     color: white;
     position: absolute;
     right: 15px;
