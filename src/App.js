@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 import {Accordion, Button, Grid, Header, Icon, Modal, Table} from "semantic-ui-react";
-import {Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import {Cell, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 
 class App extends Component {
 
@@ -278,7 +278,7 @@ class App extends Component {
         for (let i = 1; i < student.semester; i++) {
             data.push({semester: i, ects: 0, target: 30});
         }
-        console.log(data);
+
         for (let i = 0; i < student.subjects.length; i++) {
             let subject = student.subjects[i];
 
@@ -356,6 +356,23 @@ class App extends Component {
             ...this.state,
             legendModalOpen: true
         })
+    }
+
+    calculateCredits(subjects) {
+        let credits = 0;
+        for (let i = 0; i < subjects.length; i++) {
+            if (subjects[i].passed)
+                credits += subjects[i].ects;
+        }
+
+        let left = 210;
+        if(credits < 210){
+            left -= credits;
+        }else {
+            left = 0;
+        }
+        return [{name: 'Erreicht', value: credits},
+            {name: 'Fehlen', value: left}];
     }
 
     render() {
@@ -512,6 +529,9 @@ class App extends Component {
                 </Table>
             </Grid.Column>
         ];
+
+        const credits = this.calculateCredits(student.subjects);
+        const COLORS = ['#76FF03', '#FF3D00'];
 
         return (
             <div className="app-container">
@@ -670,6 +690,35 @@ class App extends Component {
                                             <XAxis dataKey="semester"/>
                                             <YAxis/>
                                         </LineChart>
+                                    </ResponsiveContainer>
+                                </div>
+                            </div>
+                            <div className="Card-footer">
+                                Angaben ohne Gewehr
+                            </div>
+                        </div>
+
+                    </Grid.Column>
+
+                    <Grid.Column mobile={16} tablet={8} computer={8}>
+                        <div className="Card">
+                            <div className="Card-header">
+                                Credits
+                            </div>
+                            <div className="Card-content">
+                                <div className="Card-chart">
+                                    <ResponsiveContainer>
+                                        <PieChart>
+                                            <Pie data={credits}
+                                                 innerRadius={50}
+                                                 outerRadius={80}
+                                                 fill="#8884d8">
+                                                {
+                                                    data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+                                                }
+                                            </Pie>
+                                            <Tooltip/>
+                                        </PieChart>
                                     </ResponsiveContainer>
                                 </div>
                             </div>
