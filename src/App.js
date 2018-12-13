@@ -10,6 +10,7 @@ class App extends Component {
         activeIndex: 0,
         data: [],
         student: {},
+        study: [],
         modalOpen: false
     };
 
@@ -32,41 +33,236 @@ class App extends Component {
             student: {
                 name: "Melanie Mustermwd",
                 matrikel_number: "293209",
-                semester: 6,
-                study: "Angewandte Klukologie",
+                semester: 4,
+                study: "Medien Design und digitale Gestaltung",
                 spo_version: "SPO 11.22A",
                 subjects: [
                     {
-                        name: "Mathe 1",
                         semester: 1,
                         ects: 5,
-                        note: 2.6,
-                        number: 234912,
-                        passed: true
+                        name: "Grundlagen Gestaltung",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
                     }, {
-                        name: "Programmieren",
                         semester: 1,
                         ects: 5,
-                        note: 1.4,
-                        number: 234912,
-                        passed: true
+                        name: "Fotografieren",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
                     }, {
-                        name: "Webdesign",
-                        semester: 1,
-                        ects: 3,
-                        note: 1.6,
-                        number: 234912,
-                        passed: true
-                    }, {
-                        name: "Internet",
                         semester: 1,
                         ects: 5,
-                        note: 4.6,
-                        number: 234912,
-                        passed: false
-                    },
+                        name: "Interaction Design",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 1,
+                        ects: 5,
+                        name: "Lineare Algebra",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 1,
+                        ects: 10,
+                        name: "Programmieren 1",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 2,
+                        ects: 10,
+                        name: "User Experience Design",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 2,
+                        ects: 10,
+                        name: "Motion Design",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 2,
+                        ects: 5,
+                        name: "Programmieren 2",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 2,
+                        ects: 5,
+                        name: "Mathematik für Designer",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 3,
+                        ects: 10,
+                        name: "Animation",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 3,
+                        ects: 5,
+                        name: "Film",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 3,
+                        ects: 5,
+                        name: "Phisical Computing",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 3,
+                        ects: 5,
+                        name: "Webentwicklung 1",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }, {
+                        semester: 3,
+                        ects: 5,
+                        name: "Software Engineering",
+                        number: 12345,
+                        passed: true,
+                        grade: 1.0
+                    }
                 ]
             },
+            study: [
+                {
+                    semester: 1,
+                    ects: 5,
+                    name: "Grundlagen Gestaltung",
+                    number: 12345
+                }, {
+                    semester: 1,
+                    ects: 5,
+                    name: "Fotografieren",
+                    number: 12345
+                }, {
+                    semester: 1,
+                    ects: 5,
+                    name: "Interaction Design",
+                    number: 12345
+                }, {
+                    semester: 1,
+                    ects: 5,
+                    name: "Lineare Algebra",
+                    number: 12345
+                }, {
+                    semester: 1,
+                    ects: 10,
+                    name: "Programmieren 1",
+                    number: 12345
+                }, {
+                    semester: 2,
+                    ects: 10,
+                    name: "User Experience Design",
+                    number: 12345
+                }, {
+                    semester: 2,
+                    ects: 10,
+                    name: "Motion Design",
+                    number: 12345
+                }, {
+                    semester: 2,
+                    ects: 5,
+                    name: "Programmieren 2",
+                    number: 12345
+                }, {
+                    semester: 2,
+                    ects: 5,
+                    name: "Mathematik für Designer",
+                    number: 12345
+                }, {
+                    semester: 3,
+                    ects: 10,
+                    name: "Animation",
+                    number: 12345
+                }, {
+                    semester: 3,
+                    ects: 5,
+                    name: "Film",
+                    number: 12345
+                }, {
+                    semester: 3,
+                    ects: 5,
+                    name: "Phisical Computing",
+                    number: 12345
+                }, {
+                    semester: 3,
+                    ects: 5,
+                    name: "Webentwicklung 1",
+                    number: 12345
+                }, {
+                    semester: 3,
+                    ects: 5,
+                    name: "Software Engineering",
+                    number: 12345
+                }, {
+                    semester: 4,
+                    ects: 10,
+                    name: "Projekt 1",
+                    number: 12345
+                }, {
+                    semester: 4,
+                    ects: 5,
+                    name: "Computer Grafik",
+                    number: 12345
+                }, {
+                    semester: 4,
+                    ects: 5,
+                    name: "Professional English",
+                    number: 12345
+                }, {
+                    semester: 4,
+                    ects: 5,
+                    name: "Webentwicklung",
+                    number: 12345
+                }, {
+                    semester: 5,
+                    ects: 30,
+                    name: "Praxissemester",
+                    number: 12345
+                }, {
+                    semester: 6,
+                    ects: 15,
+                    name: "Projekt 2",
+                    number: 12345
+                }, {
+                    semester: 6,
+                    ects: 5,
+                    name: "Game Design",
+                    number: 12345
+                }, {
+                    semester: 6,
+                    ects: 5,
+                    name: "Spiele Entwicklung",
+                    number: 12345
+                }, {
+                    semester: 6,
+                    ects: 5,
+                    name: "Mobile Anwendungen",
+                    number: 12345
+                },
+                {
+                    semester: 7,
+                    ects: 15,
+                    name: "Bachelor Arbeit",
+                    number: 12345
+                },
+
+            ],
             data: [
                 {semester: '1', ects: 25, pv: 30},
                 {semester: '2', ects: 30, pv: 30},
@@ -78,7 +274,31 @@ class App extends Component {
             ]
 
         });
+    };
+
+    getSemesterSubjects(semester) {
+        let tablerows = [];
+
+        let {study} = this.state;
+        console.log(study[0]);
+        for (let i = 0; i < study.length; i++) {
+            let subject = study[i];
+            if (subject.semester === semester) {
+                tablerows.push(
+                    <Table.Row>
+                        <Table.Cell>{subject.name}</Table.Cell>
+                        <Table.Cell>{subject.ects}</Table.Cell>
+                        <Table.Cell>-</Table.Cell>
+                        <Table.Cell>NA</Table.Cell>
+                    </Table.Row>
+                );
+            }
+        }
+
+
+        return tablerows;
     }
+
 
     handleOpen() {
         this.setState({
@@ -98,7 +318,7 @@ class App extends Component {
 
         const {activeIndex, student, data} = this.state;
 
-        const grundstudium =[
+        const grundstudium = [
             <Grid.Column mobile={16} tablet={8} computer={8}>
                 <Table celled>
                     <Table.Header>
@@ -114,30 +334,12 @@ class App extends Component {
                             <Table.HeaderCell>Status</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
-
                     <Table.Body>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                        </Table.Row>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                        </Table.Row>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                        </Table.Row>
+                        {this.getSemesterSubjects(1)}
                     </Table.Body>
                 </Table>
             </Grid.Column>,
-             <Grid.Column mobile={16} tablet={8} computer={8}>
+            <Grid.Column mobile={16} tablet={8} computer={8}>
                 <Table celled>
                     <Table.Header>
                         <Table.Row>
@@ -152,30 +354,12 @@ class App extends Component {
                             <Table.HeaderCell>Status</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
-
                     <Table.Body>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                        </Table.Row>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                        </Table.Row>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                        </Table.Row>
+                        {this.getSemesterSubjects(2)}
                     </Table.Body>
                 </Table>
             </Grid.Column>,
-             <Grid.Column mobile={16} tablet={8} computer={8}>
+            <Grid.Column mobile={16} tablet={8} computer={8}>
                 <Table celled>
                     <Table.Header>
                         <Table.Row>
@@ -192,29 +376,98 @@ class App extends Component {
                     </Table.Header>
 
                     <Table.Body>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                        </Table.Row>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                        </Table.Row>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                        </Table.Row>
+                        {this.getSemesterSubjects(3)}
                     </Table.Body>
                 </Table>
             </Grid.Column>
-            ]
-        ;
+        ];
+
+        const haumstudium = [
+            <Grid.Column mobile={16} tablet={8} computer={8}>
+                <Table celled>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell colSpan='4'>4. Semester</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Name</Table.HeaderCell>
+                            <Table.HeaderCell>ECTS</Table.HeaderCell>
+                            <Table.HeaderCell>Note</Table.HeaderCell>
+                            <Table.HeaderCell>Status</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                        {this.getSemesterSubjects(4)}
+                    </Table.Body>
+                </Table>
+            </Grid.Column>,
+            <Grid.Column mobile={16} tablet={8} computer={8}>
+                <Table celled>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell colSpan='4'>5. Semester</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Name</Table.HeaderCell>
+                            <Table.HeaderCell>ECTS</Table.HeaderCell>
+                            <Table.HeaderCell>Note</Table.HeaderCell>
+                            <Table.HeaderCell>Status</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                        <Table.Body>
+                            {this.getSemesterSubjects(5)}
+                        </Table.Body>
+                    </Table.Body>
+                </Table>
+            </Grid.Column>,
+            <Grid.Column mobile={16} tablet={8} computer={8}>
+                <Table celled>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell colSpan='4'>6. Semester</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Name</Table.HeaderCell>
+                            <Table.HeaderCell>ECTS</Table.HeaderCell>
+                            <Table.HeaderCell>Note</Table.HeaderCell>
+                            <Table.HeaderCell>Status</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+
+                    <Table.Body>
+                        {this.getSemesterSubjects(6)}
+                    </Table.Body>
+                </Table>
+            </Grid.Column>,
+            <Grid.Column mobile={16} tablet={8} computer={8}>
+                <Table celled>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell colSpan='4'>7. Semester</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Name</Table.HeaderCell>
+                            <Table.HeaderCell>ECTS</Table.HeaderCell>
+                            <Table.HeaderCell>Note</Table.HeaderCell>
+                            <Table.HeaderCell>Status</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+
+                    <Table.Body>
+                        {this.getSemesterSubjects(7)}
+                    </Table.Body>
+                </Table>
+            </Grid.Column>
+        ];
 
         return (
             <div className="app-container">
@@ -291,62 +544,17 @@ class App extends Component {
                                         Hauptstudium
                                     </Accordion.Title>
                                     <Accordion.Content active={activeIndex === 1}>
-                                        <p>
-                                            There are many breeds of dogs. Each breed varies in size and temperament.
-                                            Owners
-                                            often
-                                            select a breed of dog that they find to be compatible with their own
-                                            lifestyle
-                                            and
-                                            desires from a companion.
-                                        </p>
+                                        <Grid>
+                                            {haumstudium}
+                                        </Grid>
                                     </Accordion.Content>
 
                                     <Accordion.Title active={activeIndex === 2} index={2} onClick={this.handleClick}>
                                         Wahlfächer
                                     </Accordion.Title>
                                     <Accordion.Content active={activeIndex === 2}>
-                                        <p>
-                                            Three common ways for a prospective owner to acquire a dog is from pet
-                                            shops,
-                                            private
-                                            owners, or shelters.
-                                        </p>
-                                        <p>
-                                            A pet shop may be the most convenient way to buy a dog. Buying a dog from a
-                                            private
-                                            owner allows you to assess the pedigree and upbringing of your dog before
-                                            choosing
-                                            to
-                                            take it home. Lastly, finding your dog from a shelter, helps give a good
-                                            home to
-                                            a
-                                            dog
-                                            who may not find one so readily.
-                                        </p>
-                                    </Accordion.Content>
-                                    <Accordion.Title active={activeIndex === 3} index={3} onClick={this.handleClick}>
-                                        Zusatzfächer
-                                    </Accordion.Title>
-                                    <Accordion.Content active={activeIndex === 3}>
-                                        <p>
-                                            Three common ways for a prospective owner to acquire a dog is from pet
-                                            shops,
-                                            private
-                                            owners, or shelters.
-                                        </p>
-                                        <p>
-                                            A pet shop may be the most convenient way to buy a dog. Buying a dog from a
-                                            private
-                                            owner allows you to assess the pedigree and upbringing of your dog before
-                                            choosing
-                                            to
-                                            take it home. Lastly, finding your dog from a shelter, helps give a good
-                                            home to
-                                            a
-                                            dog
-                                            who may not find one so readily.
-                                        </p>
+                                        <Grid>
+                                        </Grid>
                                     </Accordion.Content>
                                 </Accordion>
                             </div>
@@ -393,7 +601,7 @@ class App extends Component {
                                     </Modal.Content>
                                     <Modal.Actions>
                                         <Button color='green' inverted onClick={this.handleClose.bind(this)}>
-                                            <Icon name='checkmark'/> Yes
+                                            <Icon name='checkmark'/> OK
                                         </Button>
                                     </Modal.Actions>
                                 </Modal>
