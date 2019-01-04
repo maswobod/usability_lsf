@@ -1,34 +1,35 @@
 import React, {Component} from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import './App.css';
+import '../../stylesheets/App.css';
 import {Accordion, Button, Grid, Header, Icon, Modal, Table} from "semantic-ui-react";
 import {Cell, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import {observer} from "mobx-react";
+import {observable} from "mobx";
 
+@observer
 class App extends Component {
 
-    state = {
-        activeIndex: 0,
-        data: [],
-        student: {},
-        study: [],
-        modalOpen: false,
-        legendModalOpen: false
-    };
+    @observable activeIndex = 0;
+    @observable data = [];
+    @observable student = {};
+    @observable study = [];
+    @observable modalOpen = false;
+    @observable legendModalOpen = false;
+
 
     handleClick = (e, titleProps) => {
         const {index} = titleProps;
         const {activeIndex} = this.state;
         const newIndex = activeIndex === index ? -1 : index;
 
-        this.setState({
-            ...this.state,
-            activeIndex: newIndex
-        })
+
+            this.activeIndex = newIndex
+
     };
 
     componentWillMount() {
 
-        let student = {
+        this.student = {
             name: "Melanie Mustermwd",
             matrikel_number: "293209",
             semester: 4,
@@ -144,7 +145,7 @@ class App extends Component {
                 }
             ]
         };
-        let study = [
+        this.study = [
             {
                 semester: 1,
                 ects: 5,
@@ -270,14 +271,8 @@ class App extends Component {
 
         ];
 
-        let data = this.calculateProgressChart(student);
+        this.data = this.calculateProgressChart(this.student);
 
-        this.setState({
-            ...this.state,
-            student: student,
-            study: study,
-            data: data
-        })
     };
 
     calculateProgressChart(student) {
@@ -307,11 +302,11 @@ class App extends Component {
                 let studenSubject = this.getStudentSubjectByNumber(subject.number);
                 let grade = "-";
                 let status = "NA";
-                if(studenSubject != null){
+                if (studenSubject != null) {
                     grade = studenSubject.grade;
-                    if(studenSubject.passed){
+                    if (studenSubject.passed) {
                         status = "BE";
-                    }else {
+                    } else {
                         status = "NB";
                     }
                 }
@@ -330,18 +325,18 @@ class App extends Component {
         return tablerows;
     }
 
-    getExtraSubjects(){
+    getExtraSubjects() {
         let tablerows = [];
-        for(let i = 0; i < this.state.student.subjects.length; i++){
-            if(this.isExtraSubject(this.state.student.subjects[i].number)){
+        for (let i = 0; i < this.state.student.subjects.length; i++) {
+            if (this.isExtraSubject(this.state.student.subjects[i].number)) {
                 let studenSubject = this.state.student.subjects[i];
                 let grade = "-";
                 let status = "NA";
-                if(studenSubject != null){
+                if (studenSubject != null) {
                     grade = studenSubject.grade;
-                    if(studenSubject.passed){
+                    if (studenSubject.passed) {
                         status = "BE";
-                    }else {
+                    } else {
                         status = "NB";
                     }
                 }
@@ -359,18 +354,18 @@ class App extends Component {
         return tablerows;
     }
 
-    isExtraSubject(subjectNumber){
-        for(let i = 0; i < this.state.study.length; i++){
-            if(this.state.study[i].number === subjectNumber){
+    isExtraSubject(subjectNumber) {
+        for (let i = 0; i < this.state.study.length; i++) {
+            if (this.state.study[i].number === subjectNumber) {
                 return false;
             }
         }
         return true;
     }
 
-    getStudentSubjectByNumber(subjectNumber){
-        for(let i = 0; i < this.state.student.subjects.length; i++){
-            if(this.state.student.subjects[i].number === subjectNumber){
+    getStudentSubjectByNumber(subjectNumber) {
+        for (let i = 0; i < this.state.student.subjects.length; i++) {
+            if (this.state.student.subjects[i].number === subjectNumber) {
                 return this.state.student.subjects[i];
             }
         }
