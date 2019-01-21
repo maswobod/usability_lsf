@@ -1,18 +1,15 @@
-import React, {Component} from 'react';
-import 'semantic-ui-css/semantic.min.css';
-import '../../stylesheets/App.css';
+import React from "react";
 import {Grid} from "semantic-ui-react";
-import {observer} from "mobx-react";
 import {observable} from "mobx";
 import StudentInfo from "../components/StudentInfo";
 import GradeMean from "../components/GradeMean";
 import CreditsChart from "../components/CreditsChart";
 import ProgressChart from "../components/ProgressChart";
-import Footer from "../components/Footer";
 import Grades from "../components/Grades";
+import {observer} from "mobx-react";
 
 @observer
-class App extends Component {
+class Aktuelles extends React.Component {
 
     @observable data = [];
     @observable student = {};
@@ -262,11 +259,11 @@ class App extends Component {
 
         ];
 
-        this.data = App.calculateProgressChart(this.student);
+        this.data = this.calculateProgressChart(this.student);
 
     };
 
-    static calculateProgressChart(student) {
+    calculateProgressChart(student) {
         let data = [];
 
         for (let i = 1; i < student.semester; i++) {
@@ -294,10 +291,9 @@ class App extends Component {
                     <ProgressChart data={this.data}/>
                     <Grades student={this.student} study={this.study}/>
                 </Grid>
-                <Footer/>
             </div>
         );
     }
 }
 
-export default App;
+export default Aktuelles
