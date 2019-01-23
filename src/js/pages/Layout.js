@@ -1,7 +1,7 @@
 import React from "react"
 
 import 'semantic-ui-css/semantic.min.css';
-import '../../stylesheets/App.css';
+import '../../stylesheets/App.scss';
 
 import {Route, Router, Switch} from 'react-router-dom';
 import {observer} from "mobx-react";

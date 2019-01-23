@@ -1,0 +1,147 @@
+/*
+ * Primary color: #6638b6
+ * Secondary color: #40beda
+ */
+
+.App-bottom-bar {
+  background-color: #282c34;
+  color: white;
+  display: flow-root;
+  position: absolute;
+  padding: 20px;
+  left: 0;
+  right: 0;
+}
+
+body {
+  background: #F5F5F5;
+}
+
+.Show-cell {
+  padding: 5px;
+}
+
+.app-container {
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.App-content {
+  padding-top: 20px !important;
+  font-family: 'Barlow', sans-serif;
+  padding-bottom: 20px !important;
+}
+
+.Card {
+  border: 1px solid rgba(34, 36, 38, .1);
+  border-radius: 3px;
+  background: white;
+
+}
+
+.Card-header {
+  padding: 10px;
+  border-bottom: 1px solid rgba(34, 36, 38, .1);
+  font-size: 24px;
+}
+
+.Card-content {
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.Card-footer {
+  padding: 10px;
+  border-top: 1px solid rgba(34, 36, 38, .1);
+  font-size: 12px;
+  color: darkgray;
+}
+
+.Card-chart {
+  height: 200px;
+}
+
+.wide-accordion {
+  width: 100% !important;
+}
+
+.grade-mean-good {
+  background: green;
+}
+
+.grade-mean-bad {
+  background: red;
+}
+
+.grade-mean-middle {
+  background: #fbbd08;
+}
+
+.grade-mean-bad, .grade-mean-good, .grade-mean-middle {
+  color: white;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 7px;
+  border-top-right-radius: 2px;
+}
+
+.Card-footer-button-right {
+  background: lightgray;
+  color: white;
+  position: relative;
+  padding: 10px;
+  left: 10px;
+  float: right;
+  bottom: 10px;
+  border-bottom-right-radius: 2px;
+}
+
+.side-nav {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-left: -20px !important;
+}
+
+.mobile-container {
+  padding-bottom: 60px !important;
+}
+
+.side-nav-container {
+  text-align: center !important;
+}
+
+.status-point {
+  width: 20% !important;
+  padding: 2px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  > h1 {
+    margin-bottom: 0 !important;
+  }
+  > p {
+    font-size: 10px;
+  }
+}
+
+.status-container {
+  text-align: center;
+  overflow: hidden;
+
+}
+
+.inactive-status-point{
+  color: gray;
+}
+
+
+.right-aligned{
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
