@@ -12,6 +12,7 @@ import Aktuelles from "./Aktuelles";
 import Noten from "./Noten";
 import Navigation from "../components/Navigation";
 import {observable} from "mobx";
+import Downloads from "./Downloads";
 
 @observer
 class Layout extends React.Component {
@@ -55,6 +56,7 @@ class Layout extends React.Component {
                                 <Route exact path="/" component={Aktuelles}/>
                                 <Route exact path="/ects" component={Ects}/>
                                 <Route exact path="/noten" component={Noten}/>
+                                <Route exact path="/downloads" component={Downloads}/>
                             </Switch>
                         </Grid.Row>
                         <Navigation location={location}/>
@@ -72,6 +74,7 @@ class Layout extends React.Component {
                                 <Route exact path="/" component={Aktuelles}/>
                                 <Route exact path="/ects" component={Ects}/>
                                 <Route exact path="/noten" component={Noten}/>
+                                <Route exact path="/downloads" component={Downloads}/>
                             </Switch>
                         </Grid.Column>
                     </Grid>

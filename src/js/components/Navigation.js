@@ -78,6 +78,18 @@ class Navigation extends React.Component {
                     }
                     ECTS
                 </Menu.Item>
+            </Link>,
+            <Link key="downloads" to="downloads" onClick={() => this.updateItem("downloads")}>
+                <Menu.Item
+                    name="downloads"
+                    active={this.activeItem === "downloads"}>
+                    {this.activeItem === "downloads" ?
+                        <Icon name='circle'/>
+                        :
+                        <Icon name='circle outline'/>
+                    }
+                    Downloads
+                </Menu.Item>
             </Link>
         ];
 
