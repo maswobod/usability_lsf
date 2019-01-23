@@ -2,7 +2,6 @@ import React from "react";
 import {Grid} from "semantic-ui-react";
 import MyStatus from "../components/MyStatus";
 import {observable} from "mobx";
-import {Table} from "semantic-ui-react/dist/commonjs/collections/Table/Table";
 import SemesterGrade from "../components/SemesterGrade";
 
 export default class Noten extends React.Component {

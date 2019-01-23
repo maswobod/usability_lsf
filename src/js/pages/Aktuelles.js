@@ -5,9 +5,9 @@ import StudentInfo from "../components/StudentInfo";
 import GradeMean from "../components/GradeMean";
 import CreditsChart from "../components/CreditsChart";
 import ProgressChart from "../components/ProgressChart";
-import Grades from "../components/Grades";
 import {observer} from "mobx-react";
 import CurrentPhase from "../components/CurrentPhase";
+import Todos from "../components/Todos";
 
 @observer
 class Aktuelles extends React.Component {
@@ -287,11 +287,12 @@ class Aktuelles extends React.Component {
             <div className="app-container">
                 <Grid className="App-content">
                     <StudentInfo student={this.student}/>
+                    <Todos/>
                     <CurrentPhase/>
                     <GradeMean student={this.student}/>
                     <CreditsChart data={this.data} student={this.student}/>
                     <ProgressChart data={this.data}/>
-                    <Grades student={this.student} study={this.study}/>
+
                 </Grid>
             </div>
         );
