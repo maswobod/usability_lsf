@@ -1,7 +1,13 @@
-/*
- * Primary color: #6638b6
- * Secondary color: #40beda
- */
+$active_primary: #a179db;
+$primary: #712ebc;
+$secondary: #55c7d7;
+$active_secondary: #00c5e3;
+
+$header_color: #f0ecf2;
+
+@import "Todos";
+@import "TopBar";
+@import "PerformanceOverview";
 
 .App-bottom-bar {
   background-color: #282c34;
@@ -23,14 +29,15 @@ body {
 
 .app-container {
   min-height: 100vh;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 1em;
+  padding-left: 1em;
+  margin-top: 10vh;
 }
 
 .App-content {
-  padding-top: 20px !important;
+  padding-top: 2em !important;
   font-family: 'Barlow', sans-serif;
-  padding-bottom: 20px !important;
+  padding-bottom: 2em !important;
 }
 
 .Card {
@@ -44,6 +51,7 @@ body {
   padding: 10px;
   border-bottom: 1px solid rgba(34, 36, 38, .1);
   font-size: 24px;
+  background: $header_color;
 }
 
 .Card-content {
@@ -101,11 +109,11 @@ body {
 
 .side-nav {
   position: fixed;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  margin-left: -25px !important;
+ /* top: 55%;
+  -webkit-transform: translateY(-55%);
+  -ms-transform: translateY(-55%);
+  transform: translateY(-55%);*/
+  left: 0;
 }
 
 .mobile-container {
@@ -114,29 +122,9 @@ body {
 
 .side-nav-container {
   text-align: center !important;
-}
-
-.status-point {
-  width: 20% !important;
-  padding: 2px !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  > h1 {
-    margin-bottom: 0 !important;
-  }
-  > p {
-    font-size: 10px;
-  }
-}
-
-.status-container {
-  text-align: center;
-  overflow: hidden;
-
-}
-
-.inactive-status-point {
-  color: gray;
+  margin-top: 10vh;
+  padding-top: 3em !important;
+  padding-right: 0 !important;
 }
 
 .right-aligned {
@@ -145,21 +133,6 @@ body {
   top: 25px;
 }
 
-.big-checkbox {
-  transform: scale(2);
-  position: absolute !important;
-  right: 20px;
-  top: 10px;
-}
-
-.todo-text {
-  > h3 {
-    margin-bottom: 0 !important;
-  }
-  > p {
-    //font-size: 10px;
-  }
-}
 
 .hidden {
   height: 0;
@@ -169,4 +142,37 @@ body {
 
 .no-padding {
   padding: 0 !important;
+}
+
+.ui.icon.menu .item {
+  height: 10em !important;
+}
+
+.ui.labeled.icon.menu .item>.icon:not(.dropdown) {
+  height: 3em !important;
+
+}
+
+.ui.vertical.menu .item>i.icon {
+  width: 3em !important;
+}
+
+.ui.vertical.menu {
+  width: 12.5%!important;
+}
+
+.active_item{
+  background: $active_primary;
+  border-radius: 1.5em;
+}
+
+.inactive_item{
+  border-radius: 1.5em;
+  border: #282c34 2px solid;
+}
+
+.top-bar{
+  position: fixed !important;
+  top: -15px;
+  z-index: 2;
 }

@@ -1,0 +1,37 @@
+
+.hello_text {
+  font-size: 30px;
+  color: $secondary;
+  left: 0;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.info_text {
+  font-size: 20px;
+  right: 20px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.hello_text, .info_text {
+  position: absolute;
+  top: 50%;
+  -moz-transform:  translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform:  translateY(-50%);
+}
+
+.top-bar-content {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.top-bar-column{
+  height: 10vh !important;
+}
+
+.top-bar-image{
+  height: 50px !important;
+  width: 50px !important;
+  margin-left: 10px;
+}
+

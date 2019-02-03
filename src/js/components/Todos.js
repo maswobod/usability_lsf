@@ -49,7 +49,7 @@ class Todos extends React.Component {
     render() {
 
         let showTodos = this.todos.map((todo, index) =>
-            <Grid.Row key={index} className={todo.checked ? "hidden" : ""}>
+            <Grid.Row key={index} >
 
                 <Grid.Column floated='left' width={10}>
                     <div className={"todo-text"}>
@@ -58,7 +58,10 @@ class Todos extends React.Component {
                     </div>
                 </Grid.Column>
                 <Grid.Column floated='right' width={5}>
-                    <Checkbox className={"big-checkbox"} onClick={this.todoChecked.bind(this, index)}/>
+                    <label className="container">
+                        <input type="checkbox"/>
+                        <span className="checkmark"/>
+                    </label>
                 </Grid.Column>
 
             </Grid.Row>

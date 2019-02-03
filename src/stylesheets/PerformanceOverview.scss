@@ -1,0 +1,64 @@
+
+.status-point {
+  width: 25% !important;
+  padding: 10px !important;
+
+}
+
+.status-container {
+  text-align: center;
+  overflow: hidden;
+  padding: 10px !important;
+}
+
+.status-content {
+  > h1 {
+    padding-top: 10px!important;
+    margin-bottom: 0 !important;
+  }
+  > p {
+    font-size: 10px;
+    padding-bottom: 10px !important;
+  }
+}
+
+.inactive-status-point {
+  color: gray;
+}
+
+.primary-status-content, .grade-content {
+  background: $primary;
+}
+
+.secondary-status-content, .credits-content {
+  background: $secondary;
+}
+
+.primary-status-content, .secondary-status-content{
+  color: white;
+  border-radius: 5px;
+}
+
+.credits-content, .grade-content{
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.credits-content, .grade-content {
+  > h1 {
+    margin-bottom: 0 !important;
+    font-weight: bold;
+  }
+
+  > h5 {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  > p {
+    color: ghostwhite;
+  }
+}

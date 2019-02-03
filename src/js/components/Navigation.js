@@ -44,12 +44,11 @@ class Navigation extends React.Component {
         let menuItems = [
             <Link key="aktuelles" to="aktuelles" onClick={() => this.updateItem("aktuelles")}>
                 <Menu.Item
-                    name="aktuelles"
-                    active={this.activeItem === "aktuelles"}>
+                    name="aktuelles">
                     {this.activeItem === "aktuelles" ?
-                        <Icon name='circle'/>
+                        <Icon  className={"active_item"}/>
                         :
-                        <Icon name='circle outline'/>
+                        <Icon  className={"inactive_item"}/>
                     }
 
                     Aktuelles
@@ -57,36 +56,33 @@ class Navigation extends React.Component {
             </Link>,
             <Link key="noten" to="noten" onClick={() => this.updateItem("noten")}>
                 <Menu.Item
-                    name="noten"
-                    active={this.activeItem === "noten"}>
+                    name="noten">
                     {this.activeItem === "noten" ?
-                        <Icon name='circle'/>
+                        <Icon  className={"active_item"}/>
                         :
-                        <Icon name='circle outline'/>
+                        <Icon  className={"inactive_item"}/>
                     }
                     Noten
                 </Menu.Item>
             </Link>,
             <Link key="ects" to="ects" onClick={() => this.updateItem("ects")}>
                 <Menu.Item
-                    name="ects"
-                    active={this.activeItem === "ects"}>
+                    name="ects">
                     {this.activeItem === "ects" ?
-                        <Icon name='circle'/>
+                        <Icon  className={"active_item"}/>
                         :
-                        <Icon name='circle outline'/>
+                        <Icon  className={"inactive_item"}/>
                     }
                     ECTS
                 </Menu.Item>
             </Link>,
             <Link key="downloads" to="downloads" onClick={() => this.updateItem("downloads")}>
                 <Menu.Item
-                    name="downloads"
-                    active={this.activeItem === "downloads"}>
+                    name="downloads">
                     {this.activeItem === "downloads" ?
-                        <Icon name='circle'/>
+                        <Icon  className={"active_item"}/>
                         :
-                        <Icon name='circle outline'/>
+                        <Icon  className={"inactive_item"}/>
                     }
                     Downloads
                 </Menu.Item>

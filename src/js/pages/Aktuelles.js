@@ -1,13 +1,9 @@
 import React from "react";
 import {Grid} from "semantic-ui-react";
 import {observable} from "mobx";
-import StudentInfo from "../components/StudentInfo";
-import GradeMean from "../components/GradeMean";
-import CreditsChart from "../components/CreditsChart";
-import ProgressChart from "../components/ProgressChart";
 import {observer} from "mobx-react";
-import CurrentPhase from "../components/CurrentPhase";
 import Todos from "../components/Todos";
+import PerformanceOverview from "../components/PerformanceOverview";
 
 @observer
 class Aktuelles extends React.Component {
@@ -286,13 +282,8 @@ class Aktuelles extends React.Component {
         return (
             <div className="app-container">
                 <Grid className="App-content">
-                    <StudentInfo student={this.student}/>
+                    <PerformanceOverview data={this.data}/>
                     <Todos/>
-                    <CurrentPhase/>
-                    <GradeMean student={this.student}/>
-                    <CreditsChart data={this.data} student={this.student}/>
-                    <ProgressChart data={this.data}/>
-
                 </Grid>
             </div>
         );
