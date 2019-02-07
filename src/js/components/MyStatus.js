@@ -31,14 +31,6 @@ export default class MyStatus extends React.Component {
                             </Grid.Column>
                             <Grid.Column className="status-point inactive-status-point">
                                 <h1>
-                                    120
-                                </h1>
-                                <p>
-                                    Momentan Erwartet
-                                </p>
-                            </Grid.Column>
-                            <Grid.Column className="status-point inactive-status-point">
-                                <h1>
                                     250
                                 </h1>
                                 <p>

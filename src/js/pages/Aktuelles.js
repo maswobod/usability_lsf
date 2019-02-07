@@ -4,6 +4,8 @@ import {observable} from "mobx";
 import {observer} from "mobx-react";
 import Todos from "../components/Todos";
 import PerformanceOverview from "../components/PerformanceOverview";
+import CurrentSubjects from "../components/CurrentSubjects";
+import MissingSubjects from "../components/MissingSubjects";
 
 @observer
 class Aktuelles extends React.Component {
@@ -284,6 +286,8 @@ class Aktuelles extends React.Component {
                 <Grid className="App-content">
                     <PerformanceOverview data={this.data}/>
                     <Todos/>
+                    <CurrentSubjects/>
+                    <MissingSubjects/>
                 </Grid>
             </div>
         );

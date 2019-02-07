@@ -3,6 +3,10 @@ $primary: #712ebc;
 $secondary: #55c7d7;
 $active_secondary: #00c5e3;
 
+$active_header: #43b6cf;
+$active_right: #98deea;
+
+
 $header_color: #f0ecf2;
 
 @import "Todos";
@@ -109,11 +113,7 @@ body {
 
 .side-nav {
   position: fixed;
- /* top: 55%;
-  -webkit-transform: translateY(-55%);
-  -ms-transform: translateY(-55%);
-  transform: translateY(-55%);*/
-  left: 0;
+  left: -5px;
 }
 
 .mobile-container {
@@ -133,7 +133,6 @@ body {
   top: 25px;
 }
 
-
 .hidden {
   height: 0;
   visibility: collapse;
@@ -148,31 +147,62 @@ body {
   height: 10em !important;
 }
 
-.ui.labeled.icon.menu .item>.icon:not(.dropdown) {
+.ui.labeled.icon.menu .item > .icon:not(.dropdown) {
   height: 3em !important;
 
 }
 
-.ui.vertical.menu .item>i.icon {
+.ui.vertical.menu .item > i.icon {
   width: 3em !important;
 }
 
 .ui.vertical.menu {
-  width: 12.5%!important;
+  width: 12.5% !important;
 }
 
-.active_item{
+.active_item {
   background: $active_primary;
   border-radius: 1.5em;
 }
 
-.inactive_item{
+.inactive_item {
   border-radius: 1.5em;
   border: #282c34 2px solid;
 }
 
-.top-bar{
-  position: fixed !important;
-  top: -15px;
-  z-index: 2;
+.right-header {
+  background: $active_header;
+  color: white;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 100px;
+  border-top-right-radius: 2px;
+  text-align: center;
+  padding: 10px 10px 17px;
+}
+
+.right-content {
+  background: $active_right;
+  color: white;
+  width: 100px;
+  position: relative;
+  float: right;
+  top: -29px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.left-content {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 15px;
+}
+
+.active-content {
+  margin-top: 4px;
+  padding: 0 !important;
 }

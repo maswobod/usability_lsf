@@ -1,4 +1,10 @@
 
+.top-bar{
+  position: fixed !important;
+  top: -15px;
+  z-index: 2;
+}
+
 .hello_text {
   font-size: 30px;
   color: $secondary;

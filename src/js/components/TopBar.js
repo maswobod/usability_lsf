@@ -15,7 +15,7 @@ export default class StudentInfo extends React.Component {
                         </Grid.Column>
                         <Grid.Column width={10} className={"top-bar-column"}>
                             <p className={"hello_text"}>
-                                Willkommen, {(this.props.student.name).substr(0, this.props.student.name.lastIndexOf(" "))}
+                                Willkommen, {(this.props.student.name).substr(0, this.props.student.name.lastIndexOf(" "))}!
                             </p>
                         </Grid.Column>
                         <Grid.Column width={5} className={"top-bar-column"}>
