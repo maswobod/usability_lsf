@@ -184,7 +184,7 @@ class Layout extends React.Component {
                                 <Route exact path="/downloads" component={Downloads}/>
                             </Switch>
                         </Grid.Row>
-                        <Navigation location={location}/>
+                        <Navigation location={location}  mobile={this.isMobile}/>
                     </Grid>
                     :
 
@@ -193,7 +193,7 @@ class Layout extends React.Component {
                             <TopBar student={this.student}  mobile={this.isMobile}/>
                         </Grid.Row>
                         <Grid.Column width={2} className="side-nav-container">
-                            <Navigation location={location}/>
+                            <Navigation location={location}  mobile={this.isMobile}/>
                         </Grid.Column>
 
                         <Grid.Column width={14}>

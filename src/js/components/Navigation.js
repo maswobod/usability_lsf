@@ -46,9 +46,9 @@ class Navigation extends React.Component {
                 <Menu.Item
                     name="aktuelles">
                     {this.activeItem === "aktuelles" ?
-                        <Icon  className={"active_item"}/>
+                        <Icon className={this.props.mobile ? "active_item_mobile" : "active_item"}/>
                         :
-                        <Icon  className={"inactive_item"}/>
+                        <Icon className={this.props.mobile ? "inactive_item_mobile" : "inactive_item"}/>
                     }
 
                     Aktuelles
@@ -58,9 +58,9 @@ class Navigation extends React.Component {
                 <Menu.Item
                     name="noten">
                     {this.activeItem === "noten" ?
-                        <Icon  className={"active_item"}/>
+                        <Icon className={this.props.mobile ? "active_item_mobile" : "active_item"}/>
                         :
-                        <Icon  className={"inactive_item"}/>
+                        <Icon className={this.props.mobile ? "inactive_item_mobile" : "inactive_item"}/>
                     }
                     Noten
                 </Menu.Item>
@@ -69,9 +69,9 @@ class Navigation extends React.Component {
                 <Menu.Item
                     name="ects">
                     {this.activeItem === "ects" ?
-                        <Icon  className={"active_item"}/>
+                        <Icon className={this.props.mobile ? "active_item_mobile" : "active_item"}/>
                         :
-                        <Icon  className={"inactive_item"}/>
+                        <Icon className={this.props.mobile ? "inactive_item_mobile" : "inactive_item"}/>
                     }
                     ECTS
                 </Menu.Item>
@@ -80,9 +80,9 @@ class Navigation extends React.Component {
                 <Menu.Item
                     name="downloads">
                     {this.activeItem === "downloads" ?
-                        <Icon  className={"active_item"}/>
+                        <Icon className={this.props.mobile ? "active_item_mobile" : "active_item"}/>
                         :
-                        <Icon  className={"inactive_item"}/>
+                        <Icon className={this.props.mobile ? "inactive_item_mobile" : "inactive_item"}/>
                     }
                     Downloads
                 </Menu.Item>

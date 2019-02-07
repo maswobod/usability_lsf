@@ -12,6 +12,7 @@ $header_color: #f0ecf2;
 @import "Todos";
 @import "TopBar";
 @import "PerformanceOverview";
+@import "NavBar";
 
 .App-bottom-bar {
   background-color: #282c34;
@@ -111,20 +112,8 @@ body {
   border-bottom-right-radius: 2px;
 }
 
-.side-nav {
-  position: fixed;
-  left: -5px;
-}
-
 .mobile-container {
   padding-bottom: 60px !important;
-}
-
-.side-nav-container {
-  text-align: center !important;
-  margin-top: 10vh;
-  padding-top: 3em !important;
-  padding-right: 0 !important;
 }
 
 .right-aligned {
@@ -141,33 +130,6 @@ body {
 
 .no-padding {
   padding: 0 !important;
-}
-
-.ui.icon.menu .item {
-  height: 10em !important;
-}
-
-.ui.labeled.icon.menu .item > .icon:not(.dropdown) {
-  height: 3em !important;
-
-}
-
-.ui.vertical.menu .item > i.icon {
-  width: 3em !important;
-}
-
-.ui.vertical.menu {
-  width: 12.5% !important;
-}
-
-.active_item {
-  background: $active_primary;
-  border-radius: 1.5em;
-}
-
-.inactive_item {
-  border-radius: 1.5em;
-  border: #282c34 2px solid;
 }
 
 .right-header {
