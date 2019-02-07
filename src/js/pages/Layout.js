@@ -173,7 +173,7 @@ class Layout extends React.Component {
 
                     <Grid>
                         <Grid.Row className={"top-bar"}>
-                            <TopBar student={this.student}/>
+                            <TopBar student={this.student} mobile={this.isMobile}/>
                         </Grid.Row>
                         <Grid.Row width={16} className="mobile-container">
                             <Switch>
@@ -190,7 +190,7 @@ class Layout extends React.Component {
 
                     <Grid centered columns={2}>
                         <Grid.Row className={"top-bar"}>
-                            <TopBar student={this.student}/>
+                            <TopBar student={this.student}  mobile={this.isMobile}/>
                         </Grid.Row>
                         <Grid.Column width={2} className="side-nav-container">
                             <Navigation location={location}/>
